@@ -12,3 +12,8 @@ curl -X PATCH "https://dev.azure.com/accelaeng/FA/_apis/wit/workitems/123176?api
 curl -X DELETE "https://dev.azure.com/accelaeng/FA/_apis/testplan/Plans/117147/Suites/119693/TestCase?testIds=123176" -H "Authorization: Bearer $token" -H "accept: application/json;api-version=7.1-preview.3"
 ## DELETE RESPONSE
 none
+
+## DELETE REQUEST - Negative scenario
+curl -X DELETE "https://dev.azure.com/accelaeng/FA/_apis/testplan/Plans/117147/Suites/119693/TestCase?testIds=123176" -H "Authorization: Bearer $token" -H "accept: application/json;api-version=7.1-preview.3"
+## DELETE RESPONSE - Negative scenario
+{"$id":"1","innerException":null,"message":"One or more test cases which were to be removed could not be found.","typeName":"Microsoft.TeamFoundation.TestManagement.WebApi.TestObjectNotFoundException, Microsoft.TeamFoundation.TestManagement.WebApi","typeKey":"TestObjectNotFoundException","errorCode":0,"eventId":3000}
